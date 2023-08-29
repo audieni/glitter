@@ -14,12 +14,12 @@ const FollowBar = () => {
                 <h2 className={"text-white text-xl font-semibold"}>
                     Who to follow
                 </h2>
-                <div className={"flex flex-xl gap-6 mt-4"}>
+                <div className={"flex flex-col gap-6 mt-4"}>
                     {users.map((user: Record<string, any>) => (
                         <div className={"flex flex-row gap-4"} key={user.id}>
                             <Avatar userId={user.id} />
                             <div className={"flex flex-col"}>
-                                <p className={"text-hite font-semibold text-sm"}>{user.name}</p>
+                                <p className={"text-white font-semibold text-sm"}>{user.name}</p>
                                 <p className={"text-neutral-400 text-sm"}>@{user.username}</p>
                             </div>
                         </div>
