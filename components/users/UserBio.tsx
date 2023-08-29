@@ -5,6 +5,7 @@ import {format} from "date-fns";
 import Button from "@/components/Button";
 import {BiCalendar} from "react-icons/bi";
 import useEditModal from "@/hooks/useEditModal";
+import useFollow from "@/hooks/useFollow";
 
 interface UserBioProps {
     userId: string;
@@ -24,13 +25,16 @@ const UserBio: React.FC<UserBioProps> = ({userId}) => {
 
     const editModal = useEditModal();
 
+    const {isFollowing, toggleFollow} = useFollow(userId);
+
     return (
         <div className={"border-b-[1px] border-neutral-800 pb-4"}>
             <div className={"flex justify-end p-2"}>
                 {currentUser?.id === userId ? (
                     <Button secondary label={"Edit"} onClick={editModal.onOpen} />
                 ) : (
-                    <Button secondary label={"Follow"} onClick={() => {}} />
+                    <Button secondary={!isFollowing} label={isFollowing ? "Unfollow" : "Follow"}
+                            onClick={toggleFollow} outline={isFollowing} />
                 )}
             </div>
             <div className={"mt-8 px-4"}>
