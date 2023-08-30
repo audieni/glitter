@@ -60,7 +60,7 @@ const LoginModal = () => {
     const footerContent = (
         <div className={"text-neutral-400 text-center mt-4"}>
             <p>
-                First time using Twitter?
+                First time using Glitter?
                 <span> </span>
                 <span className={"text-white cursor-pointer hover:underline"}
                       onClick={onToggle}>Create an account
