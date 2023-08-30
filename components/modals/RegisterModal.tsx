@@ -29,9 +29,7 @@ const RegisterModal = () => {
             });
 
             toast.success('Account created.');
-
             await signIn('credentials', {email, password});
-
             registerModal.onClose();
         } catch (error) {
             console.log(error);
@@ -48,29 +46,29 @@ const RegisterModal = () => {
 
         registerModal.onClose();
         loginModal.onOpen();
-    }, [isLoading, registerModal, loginModal])
+    }, [isLoading, registerModal, loginModal]);
 
     const bodyContent = (
         <div className={"flex flex-col gap-4"}>
             <Input placeholder={"Email"}
                    onChange={(e) => setEmail(e.target.value)}
                    value={email}
-                   disabled={isLoading} />
+                   disabled={isLoading}/>
             <Input placeholder={"Name"}
                    onChange={(e) => setName(e.target.value)}
                    value={name}
-                   disabled={isLoading} />
+                   disabled={isLoading}/>
             <Input placeholder={"Username"}
                    onChange={(e) => setUsername(e.target.value)}
                    value={username}
-                   disabled={isLoading} />
+                   disabled={isLoading}/>
             <Input placeholder={"Password"}
                    type={"password"}
                    onChange={(e) => setPassword(e.target.value)}
                    value={password}
-                   disabled={isLoading} />
+                   disabled={isLoading}/>
         </div>
-    )
+    );
 
     const footerContent = (
         <div className={"text-neutral-400 text-center mt-4"}>
@@ -78,14 +76,25 @@ const RegisterModal = () => {
                 Already have an account?
                 <span> </span>
                 <span className={"text-white cursor-pointer hover:underline"}
-                    onClick={onToggle}> Sign In</span>
+                      onClick={onToggle}>
+                    Sign In
+                </span>
             </p>
         </div>
     )
 
     return (
-        <Modal disabled={isLoading} isOpen={registerModal.isOpen} title={"Create an account"} actionLabel={"Register"}
-               onClose={registerModal.onClose} onSubmit={onSubmit} body={bodyContent} footer={footerContent} />
+        <>
+            <Modal disabled={isLoading}
+                   isOpen={registerModal.isOpen}
+                   title={"Create an account"}
+                   actionLabel={"Register"}
+                   onClose={registerModal.onClose}
+                   onSubmit={onSubmit}
+                   body={bodyContent}
+                   footer={footerContent}
+            />
+        </>
     )
 }
 

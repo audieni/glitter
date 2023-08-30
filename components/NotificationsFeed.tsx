@@ -20,18 +20,20 @@ const NotificationsFeed = () => {
     }
 
     return (
-        <div className={"flex flex-col"}>
-            {fetchedNotifications.map((notification: Record<string, any>) => (
-                <div className={"flex flex-row items-center p-6 gap-4 border-b-[1px] border-neutral-800"}
-                     key={notification.id}>
-                    <BsTwitter color={"white"} size={32} />
-                    <p className={"text-white"}>
-                        {notification.body}
-                    </p>
-                </div>
-            ))}
-        </div>
-    )
+        <>
+            <div className={"flex flex-col"}>
+                {fetchedNotifications.map((notification: Record<string, any>) => (
+                    <div className={"flex flex-row items-center p-6 gap-4 border-b-[1px] border-neutral-800"}
+                         key={notification.id}>
+                        <BsTwitter color={"white"} size={32} />
+                        <p className={"text-white"}>
+                            {notification.body}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </>
+    );
 }
 
 export default NotificationsFeed;

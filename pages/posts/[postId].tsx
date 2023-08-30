@@ -14,19 +14,19 @@ const PostView = () => {
     if (isLoading || !fetchedPost) {
         return (
             <div className={"flex justify-center items-center h-full"}>
-                <ClipLoader color={"lightblue"} size={80} />
+                <ClipLoader color={"lightblue"} size={80}/>
             </div>
-        )
+        );
     }
 
     return (
         <>
-            <Header label={"Tweet"} showBackArrow />
-            <PostItem data={fetchedPost} />
-            <Form placeholder={"Tweet your reply"} postId={postId as string} isComment />
-            <CommentFeed comments={fetchedPost?.comments} />
+            <Header label={"Tweet"} showBackArrow/>
+            <PostItem data={fetchedPost}/>
+            <Form placeholder={"Tweet your reply"} postId={postId as string} isComment/>
+            <CommentFeed comments={fetchedPost?.comments}/>
         </>
-    )
+    );
 }
 
 export default PostView;

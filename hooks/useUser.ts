@@ -9,7 +9,7 @@ const useUser = (userId: string) => {
         error,
         isLoading,
         mutate
-    };
+    }
 }
 
 export default useUser;

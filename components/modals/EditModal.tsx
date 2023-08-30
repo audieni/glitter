@@ -12,7 +12,6 @@ const EditModal = () => {
     const {data: currentUser} = useCurrentUser();
     const {mutate: mutateFetchedUser} = useUser(currentUser?.id);
     const editModal = useEditModal();
-
     const [profileImage, setProfileImage] = useState('');
     const [coverImage, setCoverImage] = useState('');
     const [name, setName] = useState('');
@@ -65,12 +64,20 @@ const EditModal = () => {
             <Input placeholder={"Bio"} onChange={(e) => setBio(e.target.value)}
                    value={bio} disabled={isLoading}/>
         </div>
-    )
+    );
 
     return (
-        <Modal disabled={isLoading} isOpen={editModal.isOpen} title={"Edit your profile"} actionLabel={"Save"}
-               onClose={editModal.onClose} onSubmit={onSubmit} body={bodyContent}/>
-    )
+        <>
+            <Modal disabled={isLoading}
+                   isOpen={editModal.isOpen}
+                   title={"Edit your profile"}
+                   actionLabel={"Save"}
+                   onClose={editModal.onClose}
+                   onSubmit={onSubmit}
+                   body={bodyContent}
+            />
+        </>
+    );
 }
 
 export default EditModal;

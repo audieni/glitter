@@ -35,7 +35,6 @@ const useLike = ({postId, userId}: {postId: string, userId?: string}) => {
             await request();
             await mutateFetchedPost();
             await mutateFetchedPosts();
-
             toast.success('Success');
         } catch (error) {
             toast.error('Something went wrong');

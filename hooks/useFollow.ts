@@ -33,7 +33,6 @@ const useFollow = (userId: string) => {
             await request();
             await mutateCurrentUser();
             await mutateFetchedUser();
-
             toast.success('Success');
         } catch (error) {
             toast.error('Something went wrong');
@@ -41,7 +40,8 @@ const useFollow = (userId: string) => {
     }, [currentUser, loginModal, isFollowing, userId, mutateCurrentUser, mutateFetchedUser]);
 
     return {
-        isFollowing, toggleFollow
+        isFollowing,
+        toggleFollow
     }
 }
 

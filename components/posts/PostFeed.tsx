@@ -17,7 +17,7 @@ const PostFeed: React.FC<PostFeedProps> = ({
                 <PostItem userId={userId} key={post.id} data={post} />
             ))}
         </>
-    )
+    );
 }
 
 export default PostFeed;
