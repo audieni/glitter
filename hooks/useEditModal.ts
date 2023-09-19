@@ -1,9 +1,9 @@
-import {create} from 'zustand';
+import { create } from "zustand";
 
 interface EditModalStore {
-    isOpen: boolean;
-    onOpen: () => void;
-    onClose: () => void;
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
 }
 
 const useEditModal = create<EditModalStore>((set) => ({
